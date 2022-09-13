@@ -1,5 +1,4 @@
 import React, { FormEvent, useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
 
 function App() {
@@ -49,7 +48,7 @@ function App() {
             />
           </label>
         </p>
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="contact" value="contact" />
         <p>
           <button type="submit">Send</button>
         </p>
