@@ -4,21 +4,27 @@ import "./App.css";
 
 function App() {
   const [formData, setFormData] = useState({ name: "" });
-  const submitForm = async (form: HTMLFormElement) => {
-    console.log("sending", form, formData);
+
+  const encode = (data: any) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
+  const handleFormSubmit = async (e: FormEvent) => {
+    console.log("sending", e, formData);
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: encode({ "form-name": "contact", ...formData }),
     })
-      .then(() => console.log("Form successfully submitted"))
+      .then(() => alert("Success!"))
       .catch((error) => alert(error));
-  };
 
-  const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
-    submitForm(e.target as HTMLFormElement);
   };
 
   return (
@@ -43,6 +49,7 @@ function App() {
             />
           </label>
         </p>
+        <input type="hidden" name="form-name" value="contact" />
         <p>
           <button type="submit">Send</button>
         </p>
