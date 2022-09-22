@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   const [formData, setFormData] = useState({ name: "" });
-
+  const RECAPTCHA_KEY = "6LccbvchAAAAANpZl3ELcFO_OYA8l7yA25AZMWs7";
   const encode = (data: any) => {
     return Object.keys(data)
       .map(
