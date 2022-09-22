@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
     const properties = [
       {
         property: "firstname",
-        value: "HubSpot",
+        value: "HubSpot Updated",
       },
       {
         property: "lastname",
