@@ -14,7 +14,8 @@ exports.handler = async (event, context) => {
     console.log("event.body", event.body);
     console.log("body", body);
 
-    const properties = [{ property: "firstname", value: body.firstName }];
+    const properties = [{ property: "firstname", value: body.name }];
+    c;
 
     const contact = await hubspot.contacts.createOrUpdate(
       "paulinhog84@gmail.com",
