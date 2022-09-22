@@ -11,17 +11,19 @@ exports.handler = async (event, context) => {
     });
 
     const body = JSON.parse(event.body);
-    console.log("event.body", event.body);
     console.log("body", body);
+    console.log("body-form", body.form);
 
-    const properties = [{ property: "firstname", value: body.name }];
+    const properties = [{ property: "firstname", value: body.form.name }];
 
     const contact = await hubspot.contacts.createOrUpdate(
-      "paulinhog84@gmail.com",
+      "paulo.guerra.figueiredo@gmail.com",
       {
         properties,
       }
     );
+
+    console.log("contact", contact);
 
     // Return a 200 if it succeeds
     return { statusCode: 200, body: JSON.stringify({ success: true }) };
