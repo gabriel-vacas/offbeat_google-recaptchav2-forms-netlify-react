@@ -11,6 +11,8 @@ exports.handler = async (event, context) => {
     });
 
     const body = JSON.parse(event.body);
+    console.log("event.body", event.body);
+    console.log("body", body);
 
     const properties = [
       { property: "firstname", value: body.firstName },
@@ -55,6 +57,7 @@ exports.handler = async (event, context) => {
     // Return a 200 if it succeeds
     return { statusCode: 200, body: JSON.stringify({ success: true }) };
   } catch (err) {
+    console.log("error", err);
     return { statusCode: 500, body: err.toString() };
   }
 };
