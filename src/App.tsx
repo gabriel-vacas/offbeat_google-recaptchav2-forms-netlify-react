@@ -34,6 +34,12 @@ function App() {
         data-netlify="true"
         onSubmit={handleFormSubmit}
       >
+        <input
+          type="hidden"
+          id="G00N8X00000G522w"
+          name="G00N8X00000G522w"
+          value="123"
+        />
         <p>
           <label>
             Your Name:{" "}
