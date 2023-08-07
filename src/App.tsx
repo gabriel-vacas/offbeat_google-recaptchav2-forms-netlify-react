@@ -34,6 +34,7 @@ function App() {
         data-netlify="true"
         onSubmit={handleFormSubmit}
       >
+        <input type="hidden" name="form-name" value="contact" />
         <input
           type="text"
           name="G00N8X00000G522w"
