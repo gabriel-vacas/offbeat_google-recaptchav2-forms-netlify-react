@@ -35,8 +35,7 @@ function App() {
         onSubmit={handleFormSubmit}
       >
         <input
-          type="hidden"
-          id="G00N8X00000G522w"
+          type="text"
           name="G00N8X00000G522w"
           value="123"
         />
