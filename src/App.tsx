@@ -53,7 +53,6 @@ function App() {
             />
           </label>
         </p>
-        <input type="hidden" name="contact" value="contact" />
         <p>
           <button type="submit">Send</button>
         </p>
